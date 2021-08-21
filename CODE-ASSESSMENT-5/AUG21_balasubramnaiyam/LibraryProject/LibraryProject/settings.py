@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'LibraryProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'Librarydb',
+        'NAME': 'Librarydb1',
         'CLIENT':{
             'host':'localhost',
             'port':27017,

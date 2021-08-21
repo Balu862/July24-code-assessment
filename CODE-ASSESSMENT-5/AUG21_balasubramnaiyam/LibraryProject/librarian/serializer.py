@@ -1,8 +1,8 @@
-from django.db.models import fields
-from rest_framework import serializers
+from django.db.models.base import Model
+from rest_framework import fields, serializers
 from librarian.models import LibrarianModel
-
-class LibrarianSerializer(serializers.Serializer):
+ 
+class LibrarianSerializer(serializers.ModelSerializer):
     class Meta:
         model=LibrarianModel
-        fields=('name','address','mobilenumber', 'username', 'password')
+        fields=("enroll_code","name","address","mobilenumber","username","password")

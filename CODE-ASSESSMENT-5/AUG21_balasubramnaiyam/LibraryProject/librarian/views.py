@@ -13,6 +13,7 @@ def add(request):
         mydata=JSONParser().parse(request)
         print(1)
         Librariandata=LibrarianSerializer(data=mydata)
+        print(mydata)
         if Librariandata.is_valid():
             Librariandata.save()
             return JsonResponse(Librariandata.data,safe=False,status=status.HTTP_200_OK)
@@ -44,7 +45,7 @@ def crud(request,id):
         return HttpResponse("Deleted successfully",status=status.HTTP_200_OK)
     if request.method=="PUT":
         mydata=JSONParser().parse(request)
-        Librariandetail=LibrarianSerializer(Librariandetail,data=mydata,status=status.HTTP_200_OK)
+        Librariandetail=LibrarianSerializer(Librariandetail,data=mydata)
         if Librariandetail.is_valid():
             Librariandetail.save()
             return JsonResponse(Librariandetail.data,safe=False)
