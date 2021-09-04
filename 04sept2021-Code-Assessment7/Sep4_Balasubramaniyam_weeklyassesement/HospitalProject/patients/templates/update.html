@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block mycontent %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+      <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+        <form action="./update" method="GET">
+            <table>
+                <tr>
+                    <td>Enter Patinet_Code:</td>
+                    <td><input type="text" class="form-control" name="patient_code">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button class="btn btn-success">Search</button></td>
+                </tr>
+            </table>
+          </form>
+        {% if data %}
+        <form action="./update" method="post">
+        <table class="table borderless">
+            {% csrf_token %}
+                {% for i in data %}
+                <tr>
+                    <td>patient_Code</td>
+                    <td><input type="text" name="patient_code" class="form-control" value={{i.patient_code}}></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" class="form-control" value={{i.name}}></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input type="text" name="address" class="form-control" value={{i.address}}></td>
+
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td><input type="number" name="phone" class="form-control"value={{i.phone}}></td>
+
+                </tr>
+                <tr>
+                    <td>pincode</td>
+                    <td><input type="text" name="pincode" class="form-control"value={{i.pincode}}></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email" class="form-control"value={{i.email}}></td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td><button class="btn btn-success">Update</button></td>
+                </tr>
+                
+            
+            
+        </table>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+</div>
+{% endblock %}

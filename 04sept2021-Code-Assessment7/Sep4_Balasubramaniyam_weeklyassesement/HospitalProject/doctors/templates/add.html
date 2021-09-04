@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block mycontent %}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+        <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+            <form action="./add" method="POST">
+                <table class="table borderless">
+                <tr>
+                    <td>Doctor_Code</td>
+                    <td><input type="number" name="doctor_code" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input type="text" name="address" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td><input type="number" name="mobile" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Specialisation</td>
+                    <td><input type="text" name="specialization" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Add" class="btn btn-success"></td>
+                </tr>
+                </table>
+            </form>
+        </div>
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

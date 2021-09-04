@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block mycontent %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+      <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+        {% if data %}
+        <table class="table ">
+            <tr>
+                <th>patient_code</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Mobile</th>
+                <th>pincode</th>
+                <th>Email</th>
+            </tr>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <td>{{i.patient_code}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.pincode}}</td>
+                    <td>{{i.email}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+      </div>
+      <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+    </div>
+</div>
+
+{% endblock %}
