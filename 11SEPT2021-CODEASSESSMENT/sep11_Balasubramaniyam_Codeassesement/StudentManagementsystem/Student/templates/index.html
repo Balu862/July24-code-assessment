@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <nav class="navbar navbar-expand-lg navbar-primary bg-info">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li><a class="btn btn-light " href="./">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+</head>
+<body>
+    <table class="table table-borderless">
+        {% for i in data %}
+        <form  method="POST">
+            <tr>
+                <td></td>
+                <td><input type="text" class="form-control" name="id" value={{i.id}} hidden></td>
+            </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" class="form-control" name="name" value={{i.name}}></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" class="form-control" name="address" value={{i.address}}></td>
+        </tr>
+        <tr>
+            <td>Class</td>
+            <td><input type="text" class="form-control" name="class1" value={{i.class1}}></td>
+        </tr>
+        <tr>
+            <td>Mobile</td>
+            <td><input type="text" class="form-control" name="mobile" value={{i.mobile}}></td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td><input type="text" class="form-control" name="username" value={{i.username}}></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="text" class="form-control" name="password" value={{i.password}} hidden></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class="btn btn-success" formaction="./update">update </button></td>
+        </tr>
+    </form>
+    {% endfor %}
+    </table>
+</body>
+</html>
